@@ -1,3 +1,4 @@
+//asdfsafd
 var express = require('express');
 var app = express();
 var http = require('http');
@@ -21,8 +22,8 @@ app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(compress());
 
 
-var hostedDbUrl = 'mongodb://lunch:lunch@ds255797.mlab.com:55797/lunchdb';
-var localDBUrl = 'mongodb://127.0.0.1/lunchdb';
+var hostedDbUrl = 'mongodb://lunch:lunch@ds153869.mlab.com:53869/lunchdbmalaysia';
+var localDBUrl = 'mongodb://127.0.0.1/lunchdbmalaysia';
 mongoose.connect(hostedDbUrl, {}, function (dbError) {
 	if (!!dbError) { console.log(dbError); }
 });
