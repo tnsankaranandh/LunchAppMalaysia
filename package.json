@@ -5,7 +5,7 @@
     "body-parser": "^1.4.3",
     "compression": "^1.7.0",
     "fawn": "^2.0.1",
-    "bodyfile-stream-rotator": "^0.1.0",
+    "file-stream-rotator": "^0.1.0",
     "fs": "^0.0.1-security",
     "http": "^0.0.0",
     "https": "^1.0.0",
