@@ -1,0 +1,22 @@
+on:
+  release:
+    types: [created]
+  workflow_dispath:
+    inputs:
+      BranchToDeploy:
+        description: 'Select which branch to get deployed'
+        required: true
+        default: 'development'
+        type: choice
+        options:
+        - development
+        - staging
+        
+jobs:
+  prJob:    
+    name: Print info
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print GitHub event action
+        run: |
+          echo "${{ github.event.action }}"
