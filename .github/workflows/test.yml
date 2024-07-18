@@ -21,16 +21,18 @@ jobs:
         run: |
           echo "${{ github.event_name }}"
           echo "${{ inputs.BranchToDeploy }}"
-
-  deploy:
-    name: Deploy to Oxygen
-    timeout-minutes: 30
-    runs-on: ubuntu-latest
-    steps:
+      - name: ToDeploy
+        id: ToDeploy
+        run: |
+          if [[ "${{ github.event_name }}" == "release" ]]; then
+            echo "::set-output name=BranchName::main"
+          else
+            echo "::set-output name=BranchName::${{inputs.BranchToDeploy}}"
+          fi
       - name: Checkout Repo
         uses: actions/checkout@v4
         with: 
-          ref: ${{ inputs.BranchToDeploy }}
+          ref: ${{ steps.ToDeploy.outputs.BranchName }}
       - name: Check Branch
         run: |
           git branch
