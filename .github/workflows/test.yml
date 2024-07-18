@@ -25,9 +25,9 @@ jobs:
         id: ToDeploy
         run: |
           if [[ "${{ github.event_name }}" == "release" ]]; then
-            echo "::set-output name=BranchName::main"
+            echo "BranchName=main" >> $GITHUB_OUTPUT
           else
-            echo "::set-output name=BranchName::${{inputs.BranchToDeploy}}"
+            echo "BranchName=${{inputs.BranchToDeploy}}" >> $GITHUB_OUTPUT
           fi
       - name: Checkout Repo
         uses: actions/checkout@v4
