@@ -1,7 +1,7 @@
 on:
   release:
     types: [created]
-  workflow_dispath:
+  workflow_dispatch:
     inputs:
       BranchToDeploy:
         description: 'Select which branch to get deployed'
